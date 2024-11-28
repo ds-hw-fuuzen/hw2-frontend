@@ -14,7 +14,8 @@
         "BK_LOGIN_url": "https://ce.bktencent.com/login/",
         "BK_APP_HOST": "dev.ce.bktencent.com",
         "BK_AJAK_URL_PREFIX": "/",
-        "BK_USER_INFO_URL": "/user"
+        "BK_USER_INFO_URL": "/user",
+        "BK_BACKEND_API_PREFIX": "http://dev.ce.bktencent.com:8000"
     },
     "forwardPorts": [8080],
     "workspaceFolder": "/app/dev",
