@@ -11,11 +11,10 @@
             ]
         }
     },
-    "workspaceFolder": "/app",
+    "workspaceFolder": "/app/dev",
     "mounts": [
-        "source=${localWorkspaceFolder},target=/app,type=bind"
+        "source=${localWorkspaceFolder},target=/app/dev,type=bind"
     ],
     "remoteUser": "root",
-    // "postCreateCommand": "npm install",
-    "postStartCommand": "npm run dev"
+    "postStartCommand": "ln -s /app/node_modules /app/dev/node_modules && npm run dev"
 }
