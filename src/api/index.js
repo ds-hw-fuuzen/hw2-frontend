@@ -234,6 +234,7 @@ export default http;
  */
 export function injectCSRFTokenToHeaders () {
     const CSRFToken = cookie.parse(document.cookie)[`${window.BKPAAS_APP_ID}_csrftoken`];
+    // const CSRFToken = cookie.parse(document.cookie)[`csrftoken`];
     if (CSRFToken !== undefined) {
         axiosInstance.defaults.headers.common['X-CSRFToken'] = CSRFToken;
     } else {

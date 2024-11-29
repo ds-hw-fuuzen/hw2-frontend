@@ -1,6 +1,7 @@
 {
-    "name": "hw2",
-    "image": "ghcr.io/ds-hw-fuuzen/hw2-frontend:master",
+    "name": "hw2-frontend",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "hw2-frontend",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -10,18 +11,9 @@
             ]
         }
     },
-    "containerEnv": {
-        "BK_LOGIN_url": "https://ce.bktencent.com/login/",
-        "BK_APP_HOST": "dev.ce.bktencent.com",
-        "BK_AJAK_URL_PREFIX": "/",
-        "BK_USER_INFO_URL": "/user",
-        "BK_BACKEND_API_PREFIX": "http://dev.ce.bktencent.com:8000"
-    },
-    "forwardPorts": [8080],
     "workspaceFolder": "/app/dev",
     "mounts": [
-        "source=${localWorkspaceFolder},target=/app/dev,type=bind",
-        "source=${HOME}/.ssh,target=/root/.ssh,type=bind"
+        "source=${localWorkspaceFolder},target=/app/dev,type=bind"
     ],
     "remoteUser": "root",
     "postCreateCommand": "npm install",

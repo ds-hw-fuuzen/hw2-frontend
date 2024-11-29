@@ -1,4 +1,5 @@
 module.exports = async function user(req, res, next) {
+  console.log(req.path);
   if (req.path !== '/api/user' && req.path !== '/user') {
     next();
     return;
