@@ -61,23 +61,26 @@
         </bk-form-item>
         <bk-form-item>
           <bk-button theme="primary" title="查询" @click="searchHosts">查询</bk-button>
+          <!-- 绑定查询 -->
         </bk-form-item>
       </bk-form>
     </div>
 
-    <bk-table style="margin-top: 15px;"
-              :data="host_list"
-              :size="size"
-              :pagination="pagination"
-              @page-change="handlePageChange">
+    <bk-table
+      style="margin-top: 15px;"
+      :data="host_list"
+      :size="size"
+      :pagination="pagination"
+      @page-change="handlePageChange">
       <bk-table-column label="主机ID" prop="bk_host_id" />
       <bk-table-column label="主机IP" prop="bk_host_innerip" />
       <bk-table-column label="操作人" prop="operator" />
       <bk-table-column label="备份维护人" prop="bk_bak_operator" />
       <bk-table-column label="操作" width="150">
         <template slot-scope="props">
-          <bk-button theme="primary"
-                     text :disabled="props.row.status === '创建中'" @click="getHostDetail(props.row.bk_host_id)">查看详情</bk-button>
+          <bk-button
+            theme="primary"
+            text :disabled="props.row.status === '创建中'" @click="getHostDetail(props.row.bk_host_id)">查看详情</bk-button>
         </template>
       </bk-table-column>
     </bk-table>
@@ -215,6 +218,14 @@ export default {
       try {
         console.log('维护人输入框，当前输入值为', value);
         this.operator = value;
+      } catch (e) {
+        console.error(e);
+      }
+    },
+    async handleBakOperatorChange(value, event) {
+      try {
+        console.log('备份维护人输入框，当前输入值为', value);
+        this.bak_operator = value;
       } catch (e) {
         console.error(e);
       }
