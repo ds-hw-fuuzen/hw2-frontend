@@ -16,5 +16,6 @@
         "source=${localWorkspaceFolder},target=/app/dev,type=bind"
     ],
     "remoteUser": "root",
-    "postStartCommand": "ln -s /app/node_modules /app/dev/node_modules && npm run dev"
+    "postCreateCommand": "ln -s /app/node_modules /app/dev/node_modules",
+    "postStartCommand": "npm run dev"
 }
