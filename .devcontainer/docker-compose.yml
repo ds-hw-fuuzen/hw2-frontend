@@ -1,9 +1,5 @@
 version: '3.8'
 
-networks:
-  hw2_bridge:
-    external: true
-
 services:
   frontend:
     image: "ghcr.io/ds-hw-fuuzen/hw2-frontend:master"
@@ -15,5 +11,3 @@ services:
       - BK_BACKEND_API_PREFIX=http://dev.ce.bktencent.com:8000
     volumes:
       - ${HOME}/.ssh:/root/.ssh
-    networks:
-      - hw2_bridge
